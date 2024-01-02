@@ -9,6 +9,7 @@ class Database{
     private $dbh;
     private $stmt;
     private $error;
+    private static $_instance ;
 
 
     public function __construct(){
