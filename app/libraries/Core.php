@@ -11,9 +11,14 @@
     {
         $url = $this->getUrl();
 
-        if (file_exists('../app/controllers/'.ucwords($url[0]).'.php')) {
-            $this->currentController = ucwords($url[0]);
-            unset($url[0]);
+        if (isset($url[0])) {
+            if (file_exists('../app/controllers/' . $url[0] . '.php')) {
+                // If Exist Set As Controller
+                $this->currentController = ucwords($url[0]);
+                // unset 0 Index 
+                unset($url[0]);
+            }
+            
         }
         // Require Controller
         require '../app/controllers/'. $this->currentController.'.php';
