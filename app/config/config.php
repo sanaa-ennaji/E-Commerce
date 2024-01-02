@@ -9,6 +9,6 @@ define('APPROOT', dirname(dirname(__FILE__)));
 //URL root
 define('URLROOT', 'http://localhost/E-commerce/');
 //Site name
-define('SITENAME', 'Ecommerce');
+define('SITENAME', 'E-commerce');
 
 ?>
