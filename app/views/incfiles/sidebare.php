@@ -16,11 +16,11 @@
             </div>
 
             <nav class="py-4">
-                <a href="#" class="block px-4 py-2 text-white hover:bg-green-700">
+                <a href="<?= URLROOT ?>admin/category" class="block px-4 py-2 text-white hover:bg-green-700">
                     <i class="fas fa-th-large"></i> Category
                 </a>
                 <br>
-                <a href="#" class="block px-4 py-2 text-white hover:bg-green-700">
+                <a href="<?= URLROOT ?>admin/product" class="block px-4 py-2 text-white hover:bg-green-700">
                     <i class="fas fa-box"></i> Product
                 </a><br>
                 <a href="#" class="block px-4 py-2 text-white hover:bg-green-700">
@@ -30,7 +30,7 @@
                     <i class="fas fa-clipboard"></i> Command
                 </a><br>
                 <a href="#" class="block px-4 py-2 text-white hover:bg-green-700">
-                    <i class="fas fa-truck"></i> Facteur
+                    <i class="fas fa-truck"></i> Facture
                 </a><br>
                 <a href="#" class="block px-4 py-2 text-white hover:bg-green-700">
                     <i class="fas fa-user"></i> User
@@ -40,11 +40,5 @@
                 </a>
             </nav>
         </div>
-        <div class="flex-1 p-6 overflow-hidden">
-            <h1 class="text-2xl font-semibold mb-4">Welcome to the Dashboard</h1>
-          
-        </div>
-    </div>
 
-</body>
-</html>
+
