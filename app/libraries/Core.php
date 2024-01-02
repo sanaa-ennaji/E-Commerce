@@ -18,7 +18,11 @@
                 // unset 0 Index 
                 unset($url[0]);
             }
+<<<<<<< HEAD
 
+=======
+            
+>>>>>>> 5f9522db7d1fbe71af99aa4e1b8d670477c4752c
         }
         // Require Controller
         require '../app/controllers/'. $this->currentController.'.php';
