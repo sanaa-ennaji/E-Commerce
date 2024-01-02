@@ -2,8 +2,14 @@
 <?php include APPROOT . '/views/incfiles/sidebare.php' ?>
 
 
-<div class="flex-1 p-6 overflow-hidden">
-    <h1 class="text-2xl font-semibold mb-4">Welcome to the Categories Page</h1>
+<div class="flex-1 overflow-hidden">
+    <div class="py-4 px-3 bg-white">
+        <h1 class="text-2xl font-semibold ">Pages/Categories</h1>
+    </div>
+
+    <div class="p-6">
+        main
+    </div>
 </div>
 
 
