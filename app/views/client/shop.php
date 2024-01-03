@@ -10,8 +10,7 @@
     
 
 
-
-
+<?php include APPROOT . '/views/pages/navbar.php' ?>
     <div class="container mx-auto px-4 py-16 flex">
         <!-- Browse Categories on the left -->
         <div class="lg:w-1/5">
@@ -122,12 +121,18 @@
                         <a href="#" class="block mt-2 text-sm font-semibold text-indigo-600 hover:text-indigo-500">
                             Explore Fresh Fish
                         </a>
-
+                        <a href="#" class="block mt-2 text-sm font-semibold text-indigo-600 hover:text-indigo-500">
+                            Explore Fresh Fish
+                        </a>
+                        
                     </div>
                 </div>           
             </div>
         </div>
     </div>
     
+    <?php include APPROOT . '/views/pages/footer.php' ?>
+
+
 </body>
 </html>
