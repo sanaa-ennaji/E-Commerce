@@ -26,29 +26,25 @@
     <div class="p-6 h-full bg-gray-50">
         <div id="overlayCategory" class="fixed  inset-0 top-0 left-0 bg-black w-full h-full bg-opacity-30 backdrop-blur-sm  z-50 flex items-center justify-center">
 
-            <form action="" id="form" class="w-[550px] bg-white p-5 rounded-lg relative">
+            <form action="" id="formCategory" class="w-[550px] bg-white p-5 rounded-lg relative">
                 <div>
-                    <h2 class="text-center text-xl font-semibold bg-green-500 py-3 text-white mt-5 text-secondary">Add Category</h2>
+                    <h2 class="text-center text-xl font-semibold bg-green-500 py-3 text-white mt-5 rounded-md text-white">Add Category</h2>
                 </div>
                 <p class="mt-2 text-md opacity-0 font-medium text-red-600 bg-red-50 py-2 px-3 rounded-lg dark:text-red-500" id="fieldErr"></p>
                 <div class="py-3">
-                    <label for="error" class="block mb-2 text-md font-medium text-secondary">Nom</label>
-                    <input type="text" id="fieldNom" class=" bg-white border text-sm rounded-lg focus:ring-red-500  focus:border-red-500 block w-full p-2.5 " placeholder="Enter nom" name="nom">
+                    <label for="error" class="block mb-2 text-md font-medium text-secondary">Name Category</label>
+                    <input type="text" id="fieldName" class=" bg-white border text-sm rounded-lg focus:ring-red-500  focus:border-red-500 block w-full p-2.5 " placeholder="Enter nom" name="name">
                 </div>
                 <div class="py-3">
-                    <label for="error" class="block mb-2 text-md font-medium text-secondary">Prénom</label>
-                    <input type="text" id="fieldPrenom" class=" bg-white border text-sm rounded-lg focus:ring-red-500  focus:border-red-500 block w-full p-2.5 " placeholder="Enter prenom" name="prenom">
-                </div>
-                <div class="py-3">
-                    <label for="error" class="block mb-2 text-md font-medium text-secondary ">Adress</label>
-                    <input type="text" id="fieldAdress" class=" bg-white border text-sm rounded-lg focus:ring-red-500  focus:border-red-500 block w-full p-2.5 " placeholder="Enter nom" name="adress">
+                    <label for="error" class="block mb-2 text-md font-medium text-secondary ">Description</label>
+                    <input type="text" id="fieldDesc" class=" bg-white border text-sm rounded-lg focus:ring-red-500  focus:border-red-500 block w-full p-2.5 " placeholder="Enter nom" name="desc">
                 </div>
 
                 <div class="flex gap-5 items-center justify-center">
-                    <button id="addClient" type="submit" name="addClient" class=" mt-5  items-center px-4 py-2 w-[200px]  text-center border
-                    border-transparent text-sm leading-6 font-medium rounded-md text-secondary bg-white focus:outline-none
+                    <button id="addCategory" type="submit" name="addClient" class=" mt-5  items-center px-4 py-2 w-[200px]  text-center border
+                    border-transparent text-sm leading-6 font-medium rounded-md text-white bg-green-500 focus:outline-none
                     transition duration-150 ease-in-out" style="display: block;">
-                        Add Client
+                        Add Category
                     </button>
                     <button id="updateClient" class="mt-5 block items-center px-4 py-2 w-[200px] text-center border
                     border-transparent text-sm leading-6 font-medium rounded-md text-secondary bg-four focus:outline-none
@@ -110,26 +106,15 @@
                     <thead class="text-sm text-white uppercase  bg-green-500">
                         <tr>
                             <th scope="col" class="px-6 py-2">
-                                ID Client
+                                ID Category
                             </th>
                             <th scope="col" class="px-6 py-2">
-                                Nom Client
+                                Name Category
                             </th>
                             <th scope="col" class="px-6 py-2">
-                                Prénom Client
+                                Description Category
                             </th>
-                            <th scope="col" class="px-6 py-2">
-                                Adresse Client
-                            </th>
-                            <th scope="col" class="px-6 py-2">
-                                ID Assureur
-                            </th>
-                            <th scope="col" class="px-6 py-2">
-                                Nom Assureur
-                            </th>
-                            <th scope="col" class="px-6 py-2">
-                                Adresse Assureur
-                            </th>
+
                             <th scope="col" class="px-6 py-2">
                                 Actions
                             </th>
@@ -138,25 +123,13 @@
                     <tbody id="tableBody" class="bg-gray-200 text-slate-800">
                         <tr>
                             <th scope="col" class="px-6 py-2">
-                                ID Client
+                                ID
                             </th>
                             <th scope="col" class="px-6 py-2">
-                                Nom Client
+                                Accesoire Informatique
                             </th>
-                            <th scope="col" class="px-6 py-2">
-                                Prénom Client
-                            </th>
-                            <th scope="col" class="px-6 py-2">
-                                Adresse Client
-                            </th>
-                            <th scope="col" class="px-6 py-2">
-                                ID Assureur
-                            </th>
-                            <th scope="col" class="px-6 py-2">
-                                Nom Assureur
-                            </th>
-                            <th scope="col" class="px-6 py-2">
-                                Adresse Assureur
+                            <th scope="col" class="px-6 py-2 max-w-[200px]" >
+                            Les accessoires informatiques ont évolué pour répondre aux besoins spécifiques des passionnés de jeux vidéo, et parmi eux, les souris et claviers gaming se démarquent. Ces accessoires sont conçus pour offrir une expérience de jeu optimale, avec des fonctionnalités avancées et un design ergonomique.
                             </th>
                             <th scope="col" class="px-6 py-2">
                                 Actions
