@@ -1,12 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <title>E_Commerce</title>
-</head>
-<body>
 <nav class="relative bg-white shadow">
     <div class="container px-6 py-4 mx-auto md:flex md:justify-between md:items-center">
         <div class="flex items-center justify-between">
@@ -31,6 +22,3 @@
         </div>
     </div>
 </nav>
-    
-</body>
-</html>
