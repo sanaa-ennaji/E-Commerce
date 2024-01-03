@@ -1,8 +1,8 @@
 <?php
 
-class Client {
+class Client extends User{
 	private $ID_Client;
-	private $ID_Uer;
+	private $ID_User;
 	private $Adresse;
 
 	public function __construct() {

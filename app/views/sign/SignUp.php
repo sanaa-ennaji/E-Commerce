@@ -20,29 +20,29 @@
             <div class="w-full lg:w-4/12 px-4 pt-32">
                 <div class="relative flex flex-col min-w-0 break-words w-full mb-2 shadow-lg rounded-lg bg-gray-300 border-0">
                     <div class="flex-auto px-4 lg:px-10 py-4 pt-0">
-                        <form action="" method="post">
+                        <form action="<?php echo URLROOT; ?>sign/SignUpMethode" method="POST">
                             <div class="relative w-full mb-3 mt-3">
                                 <label class="block uppercase text-gray-700 text-xs font-bold mb-2" for="grid-password">Name</label>
-                                <input type="text" class="px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full" placeholder="Name" style="transition: all 0.15s ease 0s;">
+                                <input type="text" required name="Name" class="px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full" placeholder="Name" style="transition: all 0.15s ease 0s;">
                             </div>
                             <div class="relative w-full mb-3">
                                 <label class="block uppercase text-gray-700 text-xs font-bold mb-2" for="grid-password">Adresse</label>
-                                <input type="text" class="px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full" placeholder="Adresse" style="transition: all 0.15s ease 0s;">
+                                <input type="text" required name="Adresse" class="px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full" placeholder="Adresse" style="transition: all 0.15s ease 0s;">
                             </div>
                             <div class="relative w-full mb-3">
                                 <label class="block uppercase text-gray-700 text-xs font-bold mb-2" for="grid-password">Email</label>
-                                <input type="email" class="px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full" placeholder="Email" style="transition: all 0.15s ease 0s;">
+                                <input type="email" required name="Email" class="px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full" placeholder="Email" style="transition: all 0.15s ease 0s;">
                             </div>
                             <div class="relative w-full mb-3">
                                 <label class="block uppercase text-gray-700 text-xs font-bold mb-2" for="grid-password">Password</label>
-                                <input type="password" class="px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full" placeholder="Password" style="transition: all 0.15s ease 0s;">
+                                <input type="password" required name="Password" class="px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full" placeholder="Password" style="transition: all 0.15s ease 0s;">
                             </div>
                             <div class="relative w-full mb-3">
                                 <label class="block uppercase text-gray-700 text-xs font-bold mb-2" for="grid-password">Password Confirmation</label>
-                                <input type="password" class="px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full" placeholder="Password" style="transition: all 0.15s ease 0s;">
+                                <input type="password" required name="PassswordConf" class="px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full" placeholder="Password" style="transition: all 0.15s ease 0s;">
                             </div>
                             <div class="text-center mt-6">
-                                <button class="bg-green-500 text-white active:bg-green-700 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 w-full" type="button" style="transition: all 0.15s ease 0s;">Sign Up</button>
+                                <button class="bg-green-500 text-white active:bg-green-700 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 w-full" style="transition: all 0.15s ease 0s;">Sign Up</button>
                             </div>
                         </form>
                         <div class="relative w-full mb-6">
@@ -61,5 +61,30 @@
     </div>
 
 </section>
+<script>
+
+// const regex = {
+//     name: /^[a-z\d ]{5,12}$/,
+//     email: /[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+$/,
+//     password: /^(?=.*?[a-zA-Z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-_]).{8,}$/
+// };
+
+// let inputs = document.querySelectorAll('input');
+
+// function validate(input, regex) {
+//     if(regex.test(input.value)){
+//         input.style.border = "green solid 3px";
+//     } else {
+//         input.style.border = "red solid 3px";
+//     }
+// };
+
+// inputs.forEach(input => input.addEventListener(
+//     'focusout', function(event) {
+//     validate(event.target, regex[event.target.attributes.name.value])
+//     }
+// ));
+
+</script>
 </body>
 </html>
