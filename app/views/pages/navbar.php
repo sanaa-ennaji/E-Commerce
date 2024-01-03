@@ -1,7 +1,4 @@
-<<<<<<< HEAD:app/views/pages/navbar.php
-=======
 
->>>>>>> ae3511073a1fe1f82b5e536efda960fef3607988:app/views/incfiles/navbar.php
 <nav class="relative bg-white shadow">
     <div class="container px-6 py-4 mx-auto md:flex md:justify-between md:items-center">
         <div class="flex items-center justify-between">
@@ -26,7 +23,3 @@
         </div>
     </div>
 </nav>
-<<<<<<< HEAD:app/views/pages/navbar.php
-=======
-    
->>>>>>> ae3511073a1fe1f82b5e536efda960fef3607988:app/views/incfiles/navbar.php
