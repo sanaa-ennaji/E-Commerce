@@ -24,7 +24,7 @@
 
     <!-- ================= main Page ============== -->
     <div class="p-6 h-full bg-gray-50">
-        <div id="overlayCategory" class="fixed  inset-0 top-0 left-0 bg-black w-full h-full bg-opacity-30 backdrop-blur-sm  z-50 flex items-center justify-center">
+        <div id="overlayCategory" class="fixed hidden  inset-0 top-0 left-0 bg-black w-full h-full bg-opacity-30 backdrop-blur-sm  z-50 flex items-center justify-center">
 
             <form action="" id="formCategory" class="w-[550px] bg-white p-5 rounded-lg relative">
                 <div>
@@ -68,9 +68,7 @@
                     <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" />
                 </svg>
                 <span class="sr-only">Info</span>
-                <div id="" class="ms-3 text-sm font-medium alert">
-
-                </div>
+                
             </div>
             <!-- ================== ALERT DELETE +++++++++++++++++++++++++++ -->
             <div id="alert_delete" class="flex w-[95%] mx-auto items-center p-4 mb-4 text-red-800 rounded-lg bg-red-50 hidden" role="alert">
@@ -102,7 +100,7 @@
                 </div>
             </div>
             <div class="relative w-[95%] mx-auto overflow-x-auto  sm:rounded-lg">
-                <table class="w-full text-sm text-left rtl:text-right text-white">
+                <table class="w-full text-sm text-left rtl:text-right shadow-sm text-white">
                     <thead class="text-sm text-white uppercase  bg-green-500">
                         <tr>
                             <th scope="col" class="px-6 py-2">
@@ -120,21 +118,8 @@
                             </th>
                         </tr>
                     </thead>
-                    <tbody id="tableBody" class="bg-gray-200 text-slate-800">
-                        <tr>
-                            <th scope="col" class="px-6 py-2">
-                                ID
-                            </th>
-                            <th scope="col" class="px-6 py-2">
-                                Accesoire Informatique
-                            </th>
-                            <th scope="col" class="px-6 py-2 max-w-[200px]" >
-                            Les accessoires informatiques ont évolué pour répondre aux besoins spécifiques des passionnés de jeux vidéo, et parmi eux, les souris et claviers gaming se démarquent. Ces accessoires sont conçus pour offrir une expérience de jeu optimale, avec des fonctionnalités avancées et un design ergonomique.
-                            </th>
-                            <th scope="col" class="px-6 py-2">
-                                Actions
-                            </th>
-                        </tr>
+                    <tbody id="tableBody" class="bg-green-50 text-slate-800">
+
                     </tbody>
                 </table>
                 <!-- ================ Pagination ================== -->
@@ -148,27 +133,6 @@
         </main>
     </div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 <?php include APPROOT . '/views/incfiles/footer.php' ?>

@@ -2,7 +2,7 @@
     </div>
 
     <!-- ============  Loadded Script ================ -->
-        <script src="<?= URLROOT ?>/js/category.js"></script>
+        <script type="module" src="<?= URLROOT ?>js/category.js"></script>
 
 
     </body>

@@ -11,21 +11,26 @@
 
         // Product Method And Page 
 
-        public function product() {
 
-
-
-
-            $this->view('admin/product');
-        }
         // Category Method And Page 
 
         public function category() {
 
-
-
-
             $this->view('admin/category');
+        }
+        // Fetch All Categories 
+        public function getAllCategories() {
+
+            try {
+                $categories = $this->serviceCategory->getAllCategories();
+                header('Content-Type: application/json');
+                echo json_encode($categories);
+            } catch (Exception $e) {
+                // Handle the error gracefully
+                header('Content-Type: application/json', true, 500);
+                echo json_encode(['error' => $e->getMessage()]);
+            }
+
         }
         public function addCategory() {
 
@@ -45,10 +50,7 @@
 
 
                 $this->serviceCategory->addCategory($newCategory);
-
-
-
-
+                echo "Category Added Succefully";
 
             }
 
@@ -56,7 +58,14 @@
         }
 
 
+        // Page 
+        public function product() {
 
+
+
+
+            $this->view('admin/product');
+        }
     }
 
 
