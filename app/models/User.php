@@ -2,9 +2,9 @@
 
 class User {
 	private $ID_User;
-	private $Name;
-	private $Email;
-	private $Password;
+	protected $Name;
+	protected $Email;
+	protected $Password;
 
 	public function __construct() {
 
@@ -23,4 +23,5 @@ class User {
 	}
 
 }
+
 ?>
