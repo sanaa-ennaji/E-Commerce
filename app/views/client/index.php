@@ -122,10 +122,7 @@
                         <a href="#" class="block mt-2 text-sm font-semibold text-indigo-600 hover:text-indigo-500">
                             Explore Fresh Fish
                         </a>
-                        <a href="#" class="block mt-2 text-sm font-semibold text-indigo-600 hover:text-indigo-500">
-                            Explore Fresh Fish
-                        </a>
-                        
+
                     </div>
                 </div>           
             </div>
