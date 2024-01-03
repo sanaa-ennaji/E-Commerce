@@ -4,6 +4,7 @@ class Product {
 	private $ID_Product;
 	private $Name;
 	private $Description;
+	private $IMG_Product;
 	private $ID_Category;
 	private $Quantity;
 	private $Price;
