@@ -1,4 +1,3 @@
-<!-- Core content here -->
 
 <?php
 

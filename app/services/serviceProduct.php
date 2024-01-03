@@ -2,7 +2,6 @@
 
     class serviceProduct implements interfaceProduct {
 
-        
 
 
     }
