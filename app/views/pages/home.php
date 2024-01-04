@@ -1,5 +1,7 @@
 <?php require APPROOT. '/views/pages/navbar.php'?>
 
+<<<<<<< HEAD
+=======
             
 <header class="bg-white ">
 
@@ -208,3 +210,4 @@
 
 <?php require APPROOT. '/views/pages/footer.php'?>
 
+>>>>>>> 5187b38850101d2a3d26a651b890850043663971
