@@ -1,5 +1,6 @@
 <?php
 
+
 interface Interfacecmdline {
     public function create(CommandeLine $commandeLine);
     public function read();
@@ -7,6 +8,13 @@ interface Interfacecmdline {
     public function delete($id);
     public function fetch($id);
 }
+
+
+
+
+
+
+
 
 
 

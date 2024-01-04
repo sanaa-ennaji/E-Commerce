@@ -1,6 +1,6 @@
 <?php
 
-
+require "InterfaceClient.php";
 class ServiceClient implements InterfaceClient{
     private $db;
 
