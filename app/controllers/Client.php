@@ -12,6 +12,7 @@ class Client extends Controller {
     public function shop() {
         $this->view("client/shop");
     }
+<<<<<<< HEAD
 
     public function getAllProducts() {
         try {
@@ -28,6 +29,12 @@ class Client extends Controller {
         $this->view('admin/product');
     }
 }
+=======
+    public function cart(){
+        $this->view('client/panier');
+    }
+   
+>>>>>>> 5187b38850101d2a3d26a651b890850043663971
 }
 
 ?>
