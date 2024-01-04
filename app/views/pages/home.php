@@ -206,3 +206,5 @@
     </section>
 </section>
 
+<?php require APPROOT. '/views/pages/footer.php'?>
+
