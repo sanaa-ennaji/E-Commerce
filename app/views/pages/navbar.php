@@ -1,7 +1,5 @@
-<<<<<<< HEAD:app/views/pages/navbar.php
-=======
 
->>>>>>> ae3511073a1fe1f82b5e536efda960fef3607988:app/views/incfiles/navbar.php
+<?php require APPROOT. '/views/incfiles/header.php'?>
 <nav class="relative bg-white shadow">
     <div class="container px-6 py-4 mx-auto md:flex md:justify-between md:items-center">
         <div class="flex items-center justify-between">
@@ -14,8 +12,9 @@
                 <a class="my-2 text-gray-700 transition-colors duration-300 transform hover:text-green-500 md:mx-4 md:my-0" href="#">Shop</a>
                 <a class="my-2 text-gray-700 transition-colors duration-300 transform hover:text-green-500 md:mx-4 md:my-0" href="#">Contact</a>
                 <a class="my-2 text-gray-700 transition-colors duration-300 transform hover:text-green-500 md:mx-4 md:my-0" href="#">About</a>
+                <a href="<?php echo URLROOT; ?>sign/SignUp"><i class="fa-regular fa-user my-2 md:mx-4 md:my-0"></i></a>
             </div>
-
+            
             <div class="flex justify-center md:block">
                 <a class="relative text-gray-700 transition-colors duration-300 transform hover:text-gray-600" href="#">
                     <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -26,7 +25,3 @@
         </div>
     </div>
 </nav>
-<<<<<<< HEAD:app/views/pages/navbar.php
-=======
-    
->>>>>>> ae3511073a1fe1f82b5e536efda960fef3607988:app/views/incfiles/navbar.php

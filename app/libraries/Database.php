@@ -10,6 +10,7 @@ class Database{
     private $dbh;
     private $stmt;
     private $error;
+ 
 
 
     private function __construct(){
@@ -98,4 +99,3 @@ class Database{
 }
 
 ?>
-
