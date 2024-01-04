@@ -16,10 +16,12 @@ class Pages extends Controller
         $this->view('pages/home');
     }
 
+
     public function cart(){
         $this->view('client/cart');
     }
    
+
 }
 ?>
 

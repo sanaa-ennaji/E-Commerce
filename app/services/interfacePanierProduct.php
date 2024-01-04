@@ -1,7 +1,7 @@
 <?php
 
 
-interface Panierofproduct {
+interface interfacePanierProduct {
   
         public function create(Panierofproduct $ProductOfCart);
         public function read();
@@ -10,9 +10,4 @@ interface Panierofproduct {
 
     
 }
-
-
-
-
-
 ?>

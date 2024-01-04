@@ -8,6 +8,7 @@ export function inputEmpty(...inputs) {
 export function displayMessage(message , element , timeout) {
 
     element.removeClass('hidden').fadeIn();
+    element.empty();
     element.append(`<div id="" class="ms-3 text-sm font-medium alert">${message}</div>`).fadeIn;
 
     setTimeout(function () {
