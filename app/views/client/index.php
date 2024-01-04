@@ -7,11 +7,6 @@
     <title>Shop Page</title>
 </head>
 <body class="bg-gray-100">
-    
-
-
-
-
     <div class="container mx-auto px-4 py-16 flex">
         <!-- Browse Categories on the left -->
         <div class="lg:w-1/5">

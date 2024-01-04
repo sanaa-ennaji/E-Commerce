@@ -4,10 +4,9 @@ class Pages extends Controller
 {
     public function index()
     {
+
     }
-<<<<<<< HEAD
-    
-=======
+
 
     public function navbar(){
         $this->view('pages/navbar');
@@ -16,8 +15,11 @@ class Pages extends Controller
     public function home(){
         $this->view('pages/home');
     }
->>>>>>> origin
+
+    public function cart(){
+        $this->view('client/cart');
+    }
+   
 }
 ?>
-
 
