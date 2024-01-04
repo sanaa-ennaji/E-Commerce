@@ -49,7 +49,7 @@
                     <button id="upCategory"  class="mt-5 block items-center px-4 py-2 w-[200px] text-center border
                     border-transparent text-sm leading-6 font-medium rounded-md text-white bg-green-600 focus:outline-none
                     transition duration-150 ease-in-out" >
-                        Update Client
+                        Update Category
                     </button>
                 </div>
 
@@ -135,4 +135,5 @@
 </div>
 
 
+<script type="module" src="<?= URLROOT ?>js/category.js"></script>
 <?php include APPROOT . '/views/incfiles/footer.php' ?>

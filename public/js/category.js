@@ -61,41 +61,8 @@ $(document).ready(function() {
 
     // ===================== Update  Categpry ===========================
     var update_id;
-    $(document).on('click' , '.upBtn' , function getID() {
-
-        if ($(overlayCategory).hasClass('hidden')) {
-            $(overlayCategory).removeClass('hidden')
-            $(titleFrom).text('Update Category');
-            $('#upCategory').show();
-            $('#addCategory').hide();
-        }
-
-        update_id = $(this).closest('tr').find('.categoryID').text();
-        var nameCategory = $(this).closest('tr').find('.nameCategory').text();
-        var descCategory = $(this).closest('tr').find('.descCategory').text();
-
-        $('#fieldName').val(nameCategory);
-        $('#fieldDesc').val(descCategory);
-
-    })
-
-    $(document).on('submit' , '#formCategory' , function(e) {
-        
-        e.preventDefault();
-        let formInfo = new FormData(this)
-
-        if(categoryDesc.val() == '' || categoryName.val() == '') {
-            errMessage.removeClass('opacity-0')
-            errMessage.text('Please All Field Required');
-        }else {
-            errMessage.addClass('opacity-0');
-            errMessage.text('');
-        }
-
-
-
-        
-    })
+ 
+    
 
     // ===================== End Update  Categpry ===========================
 

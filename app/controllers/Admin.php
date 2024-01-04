@@ -2,11 +2,13 @@
 
     class Admin extends Controller {
         private $serviceCategory;
+        private $serviceProduct;
 
 
         public function __construct()
         {
             $this->serviceCategory = new serviceCategory();
+            $this->serviceProduct = new serviceProduct();
         }
 
         // Product Method And Page 
@@ -133,6 +135,61 @@
 
 
             $this->view('admin/product');
+        }
+
+        // Add new Product =================
+        public function addProduct() {
+
+            if ($_SERVER['REQUEST_METHOD'] == "POST")  {
+                $addData = [
+                    'ID_product' => uniqid(),
+                    'productName' => $_POST['productName'],
+                    'descProduct' => $_POST['descProduct'],
+                    'quantity' => $_POST['quantity'],
+                    'price' => $_POST['price'],
+                    'imgProduct' => $_FILES['img_product'],
+                    'ID_category' => $_POST['categories'],
+                ];
+
+                $imgStore = $_SERVER['DOCUMENT_ROOT'] . '/E-Commerce/public/images/products';
+
+                $imageName = basename($addData['imgProduct']['name']);
+                $placement = $imgStore.$imageName;
+                
+                if (move_uploaded_file($addData['imgProduct']['tmp_name'] , $placement)) {
+
+                    $newProduct = new Product();
+
+                    $newProduct->ID_Product = $addData['ID_product'];
+                    $newProduct->Name = $addData['productName'];
+                    $newProduct->Description = $addData['descProduct'];
+                    $newProduct->Quantity = $addData['quantity'];
+                    $newProduct->Price = $addData['price'];
+                    $newProduct->IMG_Product = $imageName;
+                    $newProduct->ID_Category = $addData['ID_category'];
+
+                    $result = $this->serviceProduct->addProduct($newProduct);
+                    if ($result) {
+                        $data = [
+                            'products' => $this->serviceProduct->getAllProduct(),
+                            'succes' => 'Product Added Succefully'
+                        ];
+                        header('Content-Type: application/json');
+                        echo json_encode($data);
+                    }else{
+                        echo "Product Not Added";
+                    }
+
+                }
+                
+            }
+        }
+
+        public function getAllProducts() {
+            $data = [
+                'products' => $this->serviceProduct->getAllProduct(),
+            ];
+            echo json_encode($data);
         }
     }
 
