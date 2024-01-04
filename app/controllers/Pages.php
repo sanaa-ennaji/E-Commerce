@@ -4,6 +4,7 @@ class Pages extends Controller
 {
     public function index()
     {
+
     }
 
 
@@ -21,3 +22,4 @@ class Pages extends Controller
    
 }
 ?>
+
