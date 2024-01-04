@@ -28,16 +28,16 @@
 
             <form action="" id="formCategory" class="w-[550px] bg-white p-5 rounded-lg relative">
                 <div>
-                    <h2 class="text-center text-xl font-semibold bg-green-500 py-3 text-white mt-5 rounded-md text-white">Add Category</h2>
+                    <h2 class="text-center text-xl font-semibold bg-green-500 py-3 text-white mt-5 rounded-md text-white" id="nameFrom"></h2>
                 </div>
                 <p class="mt-2 text-md opacity-0 font-medium text-red-600 bg-red-50 py-2 px-3 rounded-lg dark:text-red-500" id="fieldErr"></p>
                 <div class="py-3">
                     <label for="error" class="block mb-2 text-md font-medium text-secondary">Name Category</label>
-                    <input type="text" id="fieldName" class=" bg-white border text-sm rounded-lg focus:ring-red-500  focus:border-red-500 block w-full p-2.5 " placeholder="Enter nom" name="name">
+                    <input type="text" id="fieldName" class=" bg-white border text-sm rounded-lg focus:ring-red-500  focus:border-red-500 block w-full p-2.5 " placeholder="Enter Category name" name="name">
                 </div>
                 <div class="py-3">
                     <label for="error" class="block mb-2 text-md font-medium text-secondary ">Description</label>
-                    <input type="text" id="fieldDesc" class=" bg-white border text-sm rounded-lg focus:ring-red-500  focus:border-red-500 block w-full p-2.5 " placeholder="Enter nom" name="desc">
+                    <input type="text" id="fieldDesc" class=" bg-white border text-sm rounded-lg focus:ring-red-500  focus:border-red-500 block w-full p-2.5 " placeholder="Enter Description" name="desc">
                 </div>
 
                 <div class="flex gap-5 items-center justify-center">
@@ -46,10 +46,10 @@
                     transition duration-150 ease-in-out" style="display: block;">
                         Add Category
                     </button>
-                    <button id="updateClient" class="mt-5 block items-center px-4 py-2 w-[200px] text-center border
-                    border-transparent text-sm leading-6 font-medium rounded-md text-secondary bg-four focus:outline-none
-                    transition duration-150 ease-in-out" style="display: none;">
-                        Update Client
+                    <button id="upCategory"  class="mt-5 block items-center px-4 py-2 w-[200px] text-center border
+                    border-transparent text-sm leading-6 font-medium rounded-md text-white bg-green-600 focus:outline-none
+                    transition duration-150 ease-in-out" >
+                        Update Category
                     </button>
                 </div>
 
@@ -89,7 +89,7 @@
                                 <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path>
                             </svg>
                         </div>
-                        <input type="text" id="search_client" class="block p-2 ps-10 text-sm outline-none focus:rounded-lg focus:border-2 focus:border-white  text-white border-b border-white  w-80 bg-transparent placeholder:text-white" placeholder="Search...">
+                        <input type="text" id="search_category" class="block p-2 ps-10 text-sm outline-none focus:rounded-lg focus:border-2 focus:border-white  text-white border-b border-white  w-80 bg-transparent placeholder:text-white" placeholder="Search...">
 
                     </div>
                     <button id="btnAdd">
@@ -135,4 +135,5 @@
 </div>
 
 
+<script type="module" src="<?= URLROOT ?>js/category.js"></script>
 <?php include APPROOT . '/views/incfiles/footer.php' ?>

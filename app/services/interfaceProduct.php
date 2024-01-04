@@ -1,7 +1,8 @@
 <?php 
 
     interface interfaceProduct {
-        public function getAllProducts();
+        public function addProduct(Product $product);
+        public function getAllProduct();
 
         
     }
