@@ -12,8 +12,9 @@
                 <a class="my-2 text-gray-700 transition-colors duration-300 transform hover:text-green-500 md:mx-4 md:my-0" href="#">Shop</a>
                 <a class="my-2 text-gray-700 transition-colors duration-300 transform hover:text-green-500 md:mx-4 md:my-0" href="#">Contact</a>
                 <a class="my-2 text-gray-700 transition-colors duration-300 transform hover:text-green-500 md:mx-4 md:my-0" href="#">About</a>
+                <a href="<?php echo URLROOT; ?>sign/SignUp"><i class="fa-regular fa-user my-2 md:mx-4 md:my-0"></i></a>
             </div>
-
+            
             <div class="flex justify-center md:block">
                 <a class="relative text-gray-700 transition-colors duration-300 transform hover:text-gray-600" href="#">
                     <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
