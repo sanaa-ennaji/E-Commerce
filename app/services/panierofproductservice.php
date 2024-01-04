@@ -1,7 +1,6 @@
 <?php
 class PanierProduct implements interfacePanierProduct
 {
-
         private $db; 
     
         public function __construct($db) {
