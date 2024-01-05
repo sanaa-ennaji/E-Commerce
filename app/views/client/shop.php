@@ -6,8 +6,8 @@
         <div class="lg:w-1/5">
             <h2 class="text-4xl font-bold mb-10">Browse Categories</h2>
             <div class="bg-white p-4 rounded-lg shadow-lg">
-                <h3 class="text-xl font-bold mb-4">Fresh Fish</h3>
-                <ul class="space-y-2" id='categoryFiltre'>
+                <h3 class="text-xl font-bold mb-4" >Fresh Fish</h3>
+                <ul class="space-y-2" id="category-filtre">
                     
                 </ul>
             </div>

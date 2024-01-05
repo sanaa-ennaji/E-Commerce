@@ -4,10 +4,10 @@
             type:"post",
             url:"http://localhost/E-commerce/client/getProducts",
             dataTypes: 'json',
-            success:function (respo){
-                console.log(respo);
+            success:function (result){
+                console.log(result);
                 $('#gridArticle').empty();
-                $.each(respo, function (i, value){
+                $.each(result, function (i, value){
                     $('#gridArticle').append(`
 
                     <section class="p-4 py-6 bg-green-200 text-center transform duration-500 hover:-translate-y-2 cursor-pointer max-w-md mx-auto">

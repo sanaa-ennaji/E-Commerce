@@ -7,6 +7,20 @@
 
 
     }
+
+
+    public function getCategories() {
+
+        $sql = "SELECT * FROM category";
+        try {
+            $this->connect_db->query($sql);
+            $categories = $this->connect_db->resultSet();
+            return $categories;
+        } catch (PDOException $e) {
+            print_r($e->getMessage());
+        }
+
+    }
     public function getProducts() {
         $sql = "SELECT * FROM product";
         try{

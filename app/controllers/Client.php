@@ -26,8 +26,22 @@ class Client extends Controller {
         
 
 
-        $this->view('admin/product');
     }
+}
+
+public function getCategories() {
+    try {
+        $products = $this ->serviceShop->getCategories();
+        header("Content-Type: application/json");
+        echo json_encode($products);
+    } catch (Exception $e) {
+        // handle error gracefully
+        header("Content-Type: application/json", true, 500);
+        echo json_encode(["error"=> $e->getMessage()]);
+    
+
+
+}
 }
 
     public function panier(){
