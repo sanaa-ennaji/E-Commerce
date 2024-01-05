@@ -1,9 +1,10 @@
 // ============ JQUERY ======================
-    function getProducts(){
+    function getProducts(ID_category){
         $.ajax({
             type:"post",
             url:"http://localhost/E-commerce/client/getProducts",
             dataTypes: 'json',
+            data: { ID_category: ID_category },
             success:function (result){
                 console.log(result);
                 $('#gridArticle').empty();
@@ -20,6 +21,10 @@
                             </section>
 
                     `);
+                });
+                $('input[name="category"]').change(function () {
+                    var ID_category = $(this).val();
+                    getProducts(ID_category);
                 });
             },
             error:function(xhr, status, error){
