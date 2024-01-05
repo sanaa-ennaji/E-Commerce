@@ -1,12 +1,11 @@
 <?php 
 
 class Client extends Controller {
-    private $serviceProduct;
+    private $serviceShop;
 
     public function __construct()
         {
-            $this->serviceProduct = new serviceProduct();
-            $this->ServiceClient = new ServiceClient;
+            $this->serviceShop = new serviceShop();
         }
 
     public function clientinfo(){
@@ -16,9 +15,11 @@ class Client extends Controller {
     public function shop() {
             $this->view("client/shop");
     }
-    public function getAllProducts() {
+
+
+    public function getProducts() {
         try {
-            $products = $this ->serviceProduct->getAllProducts();
+            $products = $this ->serviceShop->getProducts();
             header("Content-Type: application/json");
             echo json_encode($products);
         } catch (Exception $e) {
@@ -32,10 +33,10 @@ class Client extends Controller {
     }
 }
 
-    public function cart(){
+    public function panier(){
         $this->view('client/panier');
     }
-   
+
 }
 
 ?>

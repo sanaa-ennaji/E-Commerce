@@ -17,8 +17,8 @@ class Pages extends Controller
     }
 
 
-    public function cart(){
-        $this->view('client/cart');
+    public function head(){
+        $this->view('pages/head');
     }
    
 

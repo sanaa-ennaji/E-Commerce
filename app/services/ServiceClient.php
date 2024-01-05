@@ -3,6 +3,7 @@
 require "InterfaceClient.php";
 class ServiceClient implements InterfaceClient{
     private $db;
+    
 
     public function __construct() {
         // $this->db = new Database();

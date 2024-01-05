@@ -54,7 +54,6 @@
 
                     <label class="block mb-2 text-sm font-medium text-gray-900 " for="file_input">Image Product</label>
                     <input name="img_product" class="block w-full text-sm text-gray-400 border border-gray-300 rounded-lg cursor-pointer file:py-2 file:px-5 file:text-sm file:outline-none file:bg-green-500 file:border-none file:text-white file:font-medium" aria-describedby="file_input_help" id="file" type="file">
-                    <p class="mt-1 text-sm text-gray-500 " id="file_input_help">SVG, PNG, JPG</p>
                     <span class="font-medium text-sm block text-rose-500" id="errFile"></span>
 
                 </div>
@@ -63,7 +62,6 @@
 
                     <label for="categories" class="block mb-2 text-sm font-medium text-gray-900 ">Select Category</label>
                     <select id="categories" name="categories" class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:placeholder-gray-400 ">
-                        <option selected  value="">Choose a Category</option>
 
                     </select>
 
