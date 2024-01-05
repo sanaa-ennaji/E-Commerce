@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 // Import Function
 import {inputEmpty , displayMessage} from "./config.js";
 
@@ -45,7 +44,6 @@ $(document).ready(function() {
         url: "http://localhost/E-commerce/admin/getAllProducts",
         dataType: "json",
         success: function (data) {
-            console.log(data);
             getAllProduct(data['products'])
         }
     });
@@ -53,14 +51,16 @@ $(document).ready(function() {
     // ===================== Delete  Categpry ===========================
     $(document).on('click' , '.delbtn' , function() {
 
-        var id = $(this).closest('tr').find('.categoryID').text();
+        var id = $(this).closest('tr').find('.productID').text();
         $.ajax({
             type: "post",
-            url: "http://localhost/E-commerce/admin/deletProduct",
-            data: {categoryID : id},
+            url: "http://localhost/E-commerce/admin/deleteProduct",
+            data: {productID : id},
             success: function (data) {
-                displayMessage(data.delMessage, $('#alert_delete') , 3000);
-                getAllProduct(data.categories)
+                // alert(data);
+                console.log(data);
+                displayMessage(data.delete, $('#alert_delete') , 3000);
+                getAllProduct(data['products'])
             }
         });
 
@@ -87,6 +87,7 @@ $(document).ready(function() {
 
         var formData = new FormData(this);
 
+        // =============== Add new Product ===============
         if ($(document.activeElement).attr('id') == 'addProduct') {
 
             if (validInput($('#fieldErr'))) {
@@ -99,12 +100,16 @@ $(document).ready(function() {
                     contentType: false,
                     cache: false,
                     success: function (data) {
-                        
+                        $(overlayProduct).addClass('hidden')
+                        inputEmpty(('#productName') , $('#descProduct') , $('#qunatityProduct') ,  $('#priceProduct') , $('#categories'))
+                        getAllProduct(data['products'])
                     }
                 });
     
     
             }
+        }if ($(document.activeElement).attr('id') == 'upProduct') {
+            alert('hello')
         }
 
 
@@ -115,17 +120,16 @@ $(document).ready(function() {
 
 
 
-    // ============= Search In table Categories ===============
-    $(document).on('keyup' , '#search_category' , function () {
+    // ============= Search In table Product ===============
+    $(document).on('input' , '#search_product' , function () {
 
-        var searchValue = $('#search_category').val()
-
+        var searchValue = $('#search_product').val()
         $.ajax({
-            type: "post",
-            url: "http://localhost/E-commerce/admin/searchCategories",
+            type: "POST",
+            url: "http://localhost/E-commerce/admin/searchProduct",
             data: {search : searchValue},
             success: function (data) {
-                getAllProduct(data)
+                getAllProduct(data);
             }
         });
 
@@ -141,11 +145,11 @@ $(document).ready(function() {
 // ============ JQUERY ======================
 
 function getAllProduct(data) {
-    $('#tableBody').empty();
+    $('#tableProduct').empty();
     $.each(data, function (i, value) { 
         $("#tableProduct").append(`
             <tr class="h-[80px]">
-                <th scope="col" class="px-6 py-2 border border-green-300 categoryID">${value.ID_Product}</th>
+                <th scope="col" class="px-6 py-2 border border-green-300 productID">${value.ID_Product}</th>
                 <th scope="col" class="px-6 py-2 border border-green-300 categoryID">${value.Product_Name}</th>
                 <th scope="col" class="px-6 py-2 border border-green-300 categoryID">${value.Product_Desc}</th>
                 <th scope="col" class="px-6 py-2 border border-green-300 categoryID">${value.Quantity}</th>
@@ -235,32 +239,6 @@ function validInput(messge) {
 
 
 
-=======
 // ============ JQUERY ======================
-    function getProducts(){
-        $.ajax({
-            type:"post",
-            url:"http://localhost/E-commerce/client/getAllProducts",
-            dataTypes: 'json',
-            success:function (respo){
-                console.log(respo);
-                $('#gridArticle').empty();
-                $.each(respo, function (i, value){
-                    $('#gridArticle').append(`
 
-
-
-                    `);
-                });
-            },
-            error:function(xhr, status, error){
-                console.error("AJAXrequest failed:", xhr, status, error);
-            }
-
-
-        });
-
-
-    }
->>>>>>> 528b83d62ac35c5fe43ee16a454aa6599d13f54c
 

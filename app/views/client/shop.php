@@ -1,16 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
-    <title>Shop Page</title>
-</head>
-<body class="bg-gray-100">
-    
-
-
+<?php include APPROOT . '/views/incfiles/header.php' ?>
 <?php include APPROOT . '/views/pages/navbar.php' ?>
+
     <div class="container mx-auto px-4 py-16 flex">
         <!-- Browse Categories on the left -->
         <div class="lg:w-1/5">
@@ -34,105 +24,46 @@
             </div>
         </div>
     
-        <div class="lg:w-3/4 ml-8">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 gap-y-8 gap-x-6">
-                <!-- Category 1 -->
-                <div class="group bg-white rounded-lg shadow-md overflow-hidden">
-                    <div class="w-full h-56 bg-gray-200 group-hover:opacity-75">
-                        <!-- Image -->
-                    </div>
-                    <div class="px-4 py-5 sm:p-6">
-                        <h2 class="text-xl font-semibold text-gray-900">
-                            Fresh Fish
-                        </h2>
-                        <!-- Link -->
-                        <a href="#" class="block mt-2 text-sm font-semibold text-indigo-600 hover:text-indigo-500">
-                            Explore Fresh Fish
-                        </a>
-                    </div>
-                </div>    
-                <!-- Category 2 -->
-                <div class="group bg-white rounded-lg shadow-md overflow-hidden">
-                    <div class="w-full h-56 bg-gray-200 group-hover:opacity-75">
-                        <!-- Image -->
-                    </div>
-                    <div class="px-4 py-5 sm:p-6">
-                        <h2 class="text-xl font-semibold text-gray-900">
-                            Fresh Fish
-                        </h2>
-                        <!-- Link -->
-                        <a href="#" class="block mt-2 text-sm font-semibold text-indigo-600 hover:text-indigo-500">
-                            Explore Fresh Fish
-                        </a>
-                    </div>
-                </div>    
-                <!-- Category 3 -->
-                <div class="group bg-white rounded-lg shadow-md overflow-hidden">
-                    <div class="w-full h-56 bg-gray-200 group-hover:opacity-75">
-                        <!-- Image -->
-                    </div>
-                    <div class="px-4 py-5 sm:p-6">
-                        <h2 class="text-xl font-semibold text-gray-900">
-                            Fresh Fish
-                        </h2>
-                        <!-- Link -->
-                        <a href="#" class="block mt-2 text-sm font-semibold text-indigo-600 hover:text-indigo-500">
-                            Explore Fresh Fish
-                        </a>
-                    </div>
-                </div>
-                <div class="group bg-white rounded-lg shadow-md overflow-hidden">
-                    <div class="w-full h-56 bg-gray-200 group-hover:opacity-75">
-                        <!-- Image -->
-                    </div>
-                    <div class="px-4 py-5 sm:p-6">
-                        <h2 class="text-xl font-semibold text-gray-900">
-                            Fresh Fish
-                        </h2>
-                        <!-- Link -->
-                        <a href="#" class="block mt-2 text-sm font-semibold text-indigo-600 hover:text-indigo-500">
-                            Explore Fresh Fish
-                        </a>
-                    </div>
-                </div>
-                <div class="group bg-white rounded-lg shadow-md overflow-hidden">
-                    <div class="w-full h-56 bg-gray-200 group-hover:opacity-75">
-                        <!-- Image -->
-                    </div>
-                    <div class="px-4 py-5 sm:p-6">
-                        <h2 class="text-xl font-semibold text-gray-900">
-                            Fresh Fish
-                        </h2>
-                        <!-- Link -->
-                        <a href="#" class="block mt-2 text-sm font-semibold text-indigo-600 hover:text-indigo-500">
-                            Explore Fresh Fish
-                        </a>
-                    </div>
-                </div>
-                <div class="group bg-white rounded-lg shadow-md overflow-hidden">
-                    <div class="w-full h-56 bg-gray-200 group-hover:opacity-75">
-                        <!-- Image -->
-                    </div>
-                    <div class="px-4 py-5 sm:p-6">
-                        <h2 class="text-xl font-semibold text-gray-900">
-                            Fresh Fish
-                        </h2>
-                        <!-- Link -->
-                        <a href="#" class="block mt-2 text-sm font-semibold text-indigo-600 hover:text-indigo-500">
-                            Explore Fresh Fish
-                        </a>
-                        <a href="#" class="block mt-2 text-sm font-semibold text-indigo-600 hover:text-indigo-500">
-                            Explore Fresh Fish
-                        </a>
-                        
-                    </div>
-                </div>           
-            </div>
-        </div>
-    </div>
+        <section class="container mx-auto p-10 md:py-12 px-0 md:p-8 md:px-0 ">
+    <section id="gridArticle" class="p-5 md:p-0 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-3 gap-10 items-start ">
     
+
+    <section class="p-4 py-6 bg-green-200 text-center transform duration-500 hover:-translate-y-2 cursor-pointer max-w-md mx-auto">
+    <img src="https://www.dropbox.com/s/8ymeus1n9k9bhpd/y16625.png?dl=1" alt="" class="w-full h-80 object-cover">
+
+            <h1 class="text-xl my-3">Comfortable Wooden Chair</h1>
+            <p class="mb-3 text-md">Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, incidunt</p>
+            <h2 class="font-semibold mb-3">$39.99</h2>
+            <button class="p-2 px-4 bg-green-500 text-white rounded-md hover:bg-green-700 text-sm">Add To Cart</button>
+            </section>
+
+
+        <section class="p-5 py-10 bg-green-200 text-center transform duration-500 hover:-translate-y-2 cursor-pointer">
+            <img src="https://www.dropbox.com/s/ykdro56f2qltxys/hh2774663-87776.png?dl=1" alt="">
+           
+            <h1 class="text-3xl my-5">Multipurpose Wooden Trolly</h1>
+            <p class="mb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, incidunt!</p>
+            <h2 class="font-semibold mb-5">$19.99</h2>
+            <button class="p-2 px-6 bg-green-500 text-white rounded-md hover:bg-green-700">Add To Cart</button>
+        </section>
+
+        <section class="p-5 py-10 bg-green-200 text-center transform duration-500 hover:-translate-y-2 cursor-pointer">
+            <img src="https://www.dropbox.com/s/1fav310i2eqkdz8/tool2.png?dl=1" alt="">
+            
+            <h1 class="text-3xl my-5">Multipurpose Wooden Tool</h1>
+            <p class="mb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, incidunt!</p>
+            <h2 class="font-semibold mb-5">$34.99</h2>
+            <button class="p-2 px-6 bg-green-500 text-white rounded-md hover:bg-green-700">Add To Cart</button>
+        </section>
+    </section>
+</section>
+    </div>
+    <script src="<?= URLROOT ?>js/shop.js"></script>
     <?php include APPROOT . '/views/pages/footer.php' ?>
 
 
-</body>
-</html>
+
+    
+
+
+

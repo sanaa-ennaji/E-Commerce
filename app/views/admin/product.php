@@ -118,7 +118,7 @@
                                 <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path>
                             </svg>
                         </div>
-                        <input type="text" id="search_category" class="block p-2 ps-10 text-sm outline-none focus:rounded-lg focus:border-2 focus:border-white  text-white border-b border-white  w-80 bg-transparent placeholder:text-white" placeholder="Search...">
+                        <input type="text" id="search_product" class="block p-2 ps-10 text-sm outline-none focus:rounded-lg focus:border-2 focus:border-white  text-white border-b border-white  w-80 bg-transparent placeholder:text-white" placeholder="Search...">
 
                     </div>
                     <button id="btnAdd">
