@@ -50,6 +50,34 @@ class serviceProduct implements interfaceProduct
             }
 
         }
+        // ========== Delete Product ==========
+        public function deleteProduct($id){
+
+            $sql = "DELETE FROM product WHERE ID_Product = :id";
+            try {
+                $this->db_conn->query($sql);
+                $this->db_conn->bind(':id' , $id);
+                $this->db_conn->execute();
+                return true;
+            } catch (PDOException $e) {
+                echo $e->getMessage();
+            }
+        }
+        // Function Search  Product 
+        public function searchProduct($r){
+
+            $sql = "SELECT * FROM product JOIN category ON product.ID_Category = category.ID_Category WHERE Product_Name LIKE :request";
+            try {
+                $this->db_conn->query($sql);
+                $this->db_conn->bind(":request" , $r . '%');
+                $products = $this->db_conn->resultSet();
+                return $products;
+                echo "am serched";
+            } catch (PDOException $e) {
+                print_r($e->getMessage());
+            }
+
+        }
 
     }
 

@@ -233,13 +233,3 @@ function validInput(messge) {
     
 
 
-
-
-
-
-
-
-
-
-    }
-
