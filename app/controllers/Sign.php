@@ -1,5 +1,6 @@
 <?php
 
+session_start();
 class Sign extends Controller
 {
 
@@ -21,7 +22,7 @@ class Sign extends Controller
     public function SignInMethode(){
         if ($_SERVER['REQUEST_METHOD'] == 'POST'){
             if ($this->ServiceUser->findUserByEmail($_POST['Email'])){
-
+                $this->ServiceUser->authenticate($_POST['Email'], $_POST['Password']);
             }
         }
     }

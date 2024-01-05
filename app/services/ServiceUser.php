@@ -19,13 +19,16 @@ class ServiceUser implements InterfaceUser {
         }
 
         if ($result) {
-            // if ($result->ID_User)
             if (password_verify($password, $result->Password)) {
-                // return $result;
                 $client = getRole('Client', $result->ID_User);
                 $admin = getRole('Admin', $result->ID_User);
                 if($admin){
-                    
+                    $_SESSION['user'] = 'admin';
+                    $_SESSION['user_id'] = $result->ID_User;
+                }
+                if($client){
+                    $_SESSION['user'] = 'client';
+                    $_SESSION['user_id'] = $result->ID_User;
                 }
             } else {
                 echo "wrong password";
