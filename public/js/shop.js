@@ -2,7 +2,7 @@
     function getProducts(){
         $.ajax({
             type:"post",
-            url:"http://localhost/E-commerce/client/getAllProducts",
+            url:"http://localhost/E-commerce/client/getProducts",
             dataTypes: 'json',
             success:function (respo){
                 console.log(respo);
