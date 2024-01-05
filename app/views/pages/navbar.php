@@ -8,11 +8,15 @@
 
         <div class="absolute inset-x-0 z-20 w-full px-6 py-4 transition-all duration-300 ease-in-out bg-white md:mt-0 md:p-0 md:top-0 md:relative md:bg-transparent md:w-auto md:opacity-100 md:translate-x-0 md:flex md:items-center">
             <div class="flex flex-col md:flex-row md:mx-6">
-                <a class="my-2 text-gray-700 transition-colors duration-300 transform hover:text-green-500 md:mx-4 md:my-0" href="#">Home</a>
-                <a class="my-2 text-gray-700 transition-colors duration-300 transform hover:text-green-500 md:mx-4 md:my-0" href="#">Shop</a>
+                <a class="my-2 text-gray-700 transition-colors duration-300 transform hover:text-green-500 md:mx-4 md:my-0" href="<?php echo URLROOT; ?>pages/home">Home</a>
+                <a class="my-2 text-gray-700 transition-colors duration-300 transform hover:text-green-500 md:mx-4 md:my-0" href="<?php echo URLROOT; ?>client/shop">Shop</a>
                 <a class="my-2 text-gray-700 transition-colors duration-300 transform hover:text-green-500 md:mx-4 md:my-0" href="#">Contact</a>
                 <a class="my-2 text-gray-700 transition-colors duration-300 transform hover:text-green-500 md:mx-4 md:my-0" href="#">About</a>
-                <a href="<?php echo URLROOT; ?>sign/SignUp"><i class="fa-regular fa-user my-2 md:mx-4 md:my-0"></i></a>
+                <?php if($_SESSION['user']){?>
+                    <a href="<?php echo URLROOT; ?>client/clientinfo"><i class="fa-regular fa-user my-2 md:mx-4 md:my-0"></i></a>
+                <?php } else{?>
+                    <a href="<?php echo URLROOT; ?>sign/SignIn"><i class="fa-regular fa-user my-2 md:mx-4 md:my-0"></i></a>
+                <?php }?>
             </div>
             
             <div class="flex justify-center md:block">

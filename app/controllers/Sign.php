@@ -1,6 +1,6 @@
 <?php
 
-session_start();
+// session_start();
 class Sign extends Controller
 {
 
@@ -23,6 +23,10 @@ class Sign extends Controller
         if ($_SERVER['REQUEST_METHOD'] == 'POST'){
             if ($this->ServiceUser->findUserByEmail($_POST['Email'])){
                 $this->ServiceUser->authenticate($_POST['Email'], $_POST['Password']);
+                echo $_SESSION['user'];
+                if($_SESSION['user'] == 'client'){
+                    redirect('client/shop');
+                }
             }
         }
     }
@@ -45,6 +49,15 @@ class Sign extends Controller
 
             }
         }
+    }
+
+    public function logout()
+    {
+        unset($_SESSION['user_id']);
+        unset($_SESSION['user']);
+        // unset($_SESSION['user_name']);
+        session_destroy();
+        redirect('pages/home');
     }
 
     public function ResetPw(){

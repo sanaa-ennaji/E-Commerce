@@ -6,11 +6,15 @@ class Client extends Controller {
     public function __construct()
         {
             $this->serviceProduct = new serviceProduct();
+            $this->ServiceClient = new ServiceClient;
         }
 
-
+    public function clientinfo(){
+        $data = $this->ServiceClient->getClientInfo($_SESSION['user_id']);
+        $this->view('client/clientinfo', $data);
+    }
     public function shop() {
-        $this->view("client/shop");
+            $this->view("client/shop");
     }
     public function getAllProducts() {
         try {
