@@ -26,7 +26,7 @@ class Client extends Controller {
         
 
 
-        $this->view('admin/product');
+        // $this->view('admin/product');
     }
 }
 
