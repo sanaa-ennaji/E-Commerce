@@ -5,13 +5,15 @@ class Database{
     private $user = DB_USER;
     private $pass = DB_PASS;
     private $dbname = DB_NAME;
+    protected static $_instance;
 
     private $dbh;
     private $stmt;
     private $error;
+ 
 
 
-    public function __construct(){
+    private function __construct(){
         $con = new PDO("mysql:host = $this->host",$this->user, $this->pass);
         $sql = 'CREATE DATABASE IF NOT EXISTS Ecommerce';
         $con->exec($sql);
@@ -97,4 +99,3 @@ class Database{
 }
 
 ?>
-
