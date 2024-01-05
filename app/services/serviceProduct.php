@@ -47,7 +47,7 @@ class serviceProduct implements interfaceProduct
 
             } catch (PDOException $e) {
                 echo $e->getMessage();
-            }   
+            }
 
         }
         // ========== Delete Product ==========

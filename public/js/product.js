@@ -233,12 +233,3 @@ function validInput(messge) {
     
 
 
-
-
-
-
-
-
-// ============ JQUERY ======================
-
-
