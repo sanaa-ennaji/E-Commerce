@@ -72,7 +72,7 @@ class serviceProduct implements interfaceProduct
                 $this->db_conn->bind(":request" , $r . '%');
                 $products = $this->db_conn->resultSet();
                 return $products;
-                echo "am serched";
+                // echo "am serched";
             } catch (PDOException $e) {
                 print_r($e->getMessage());
             }
