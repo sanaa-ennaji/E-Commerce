@@ -12,8 +12,6 @@ class Client extends Controller {
     public function shop() {
         $this->view("client/shop");
     }
-
-
     public function getAllProducts() {
         try {
             $products = $this ->serviceProduct->getAllProducts();
@@ -26,14 +24,14 @@ class Client extends Controller {
         
 
 
-        // $this->view('admin/product');
+        $this->view('admin/product');
     }
 }
 
     public function cart(){
         $this->view('client/panier');
     }
-
+   
 }
 
 ?>
