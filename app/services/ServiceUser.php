@@ -10,7 +10,7 @@ class ServiceUser implements InterfaceUser {
     public function authenticate($email, $password) {
         try {
 
-            $this->db->query("SELECT * FROM User WHERE email = :email");
+            $this->db->query("SELECT * FROM User WHERE Email = :email");
             $this->db->bind(":email", $email);
             $this->db->execute();
             $result = $this->db->single();
@@ -20,8 +20,8 @@ class ServiceUser implements InterfaceUser {
 
         if ($result) {
             if (password_verify($password, $result->Password)) {
-                $client = getRole('Client', $result->ID_User);
-                $admin = getRole('Admin', $result->ID_User);
+                $client = $this->getRole('Client', $result->ID_User);
+                $admin = $this->getRole('Admin', $result->ID_User);
                 if($admin){
                     $_SESSION['user'] = 'admin';
                     $_SESSION['user_id'] = $result->ID_User;
@@ -31,7 +31,7 @@ class ServiceUser implements InterfaceUser {
                     $_SESSION['user_id'] = $result->ID_User;
                 }
             } else {
-                echo "wrong password";
+                echo "<script>alert('Wrong Password')</script>";
             }
         }
         return false;
@@ -52,7 +52,7 @@ class ServiceUser implements InterfaceUser {
 
     public function getRole($table, $ID_User){
         try {
-            $this->db->query("SELECT * FROM $table WHERE ID_User = :User");
+            $this->db->query("SELECT * FROM " . $table ." WHERE ID_User = :User");
             $this->db->bind(":User", $ID_User);
             $this->db->execute();
             $client = $this->db->single();

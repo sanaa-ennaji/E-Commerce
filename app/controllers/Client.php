@@ -8,9 +8,12 @@ class Client extends Controller {
             $this->serviceShop = new serviceShop();
         }
 
-
+    public function clientinfo(){
+        $data = $this->ServiceClient->getClientInfo($_SESSION['user_id']);
+        $this->view('client/clientinfo', $data);
+    }
     public function shop() {
-        $this->view("client/shop");
+            $this->view("client/shop");
     }
 
 
