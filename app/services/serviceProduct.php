@@ -1,15 +1,9 @@
 <?php
 
-<<<<<<< HEAD
-        private $db_conn;
-=======
 class serviceProduct implements interfaceProduct
 {
-    private $connect_db;
-    public function __construct()
-    {
-        $this->connect_db = Database::getInstance();
->>>>>>> 528b83d62ac35c5fe43ee16a454aa6599d13f54c
+    private $db_conn;
+
 
         public function __construct()
         {
@@ -56,20 +50,38 @@ class serviceProduct implements interfaceProduct
             }   
 
         }
+        // ========== Delete Product ==========
+        public function deleteProduct($id){
+
+            $sql = "DELETE FROM product WHERE ID_Product = :id";
+            try {
+                $this->db_conn->query($sql);
+                $this->db_conn->bind(':id' , $id);
+                $this->db_conn->execute();
+                return true;
+            } catch (PDOException $e) {
+                echo $e->getMessage();
+            }
+        }
+        // Function Search  Product 
+        public function searchProduct($r){
+
+            $sql = "SELECT * FROM product JOIN category ON product.ID_Category = category.ID_Category WHERE Product_Name LIKE :request";
+            try {
+                $this->db_conn->query($sql);
+                $this->db_conn->bind(":request" , $r . '%');
+                $products = $this->db_conn->resultSet();
+                return $products;
+                echo "am serched";
+            } catch (PDOException $e) {
+                print_r($e->getMessage());
+            }
+
+        }
 
     }
-    public function getAllProducts()
-    {
-        $sql = "SELECT * FROM product";
-        try {
-            $this->connect_db->query($sql);
-            $products = $this->connect_db->resultSet();
-            return $products;
-        } catch (PDOException $e) {
-            print_r($e->getMessage());
-        }
-    }
-}
+
+
 
 
 ?>
