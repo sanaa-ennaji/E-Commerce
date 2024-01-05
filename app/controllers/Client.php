@@ -30,7 +30,7 @@ class Client extends Controller {
     }
 }
 
-    public function cart(){
+    public function panier(){
         $this->view('client/panier');
     }
 

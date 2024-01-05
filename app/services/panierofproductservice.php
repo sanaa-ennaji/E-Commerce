@@ -1,10 +1,10 @@
 <?php
-class PanierProduct implements interfacePanierProduct
+class panierofproductservice implements interfacePanierProduct  
 {
         private $db; 
     
-        public function __construct($db) {
-            $this->db = $db;
+        public function __construct() {
+            $this->db = Database::getInstance();
         }
     
         public function create(PanierOfProduct $productOfCart) {
@@ -49,4 +49,3 @@ class PanierProduct implements interfacePanierProduct
     }
     ?>
     
-?>

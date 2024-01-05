@@ -1,70 +1,35 @@
 <?php
 
-// require_once 'PanierOfProductService.php'; 
+class PanierOfProductController extends Controller {
+    private $panierProductService;
+ private 
+    public function __construct() {
+        $this->panierProductService = new panierofproductservice(); 
+    }
+    public function read() {
+        $panierProducts = $this->panierProductService->read();
+        echo json_encode($panierProducts);
+    }
 
-// class PanierController {
-//     private $panierService;
+    public function add() {
+        $panierProduct = new PanierOfProduct();
+        $panierProduct->ID_Pannier = $_POST['idPanier'];
+        $panierProduct->ID_Product = $_POST['idProduct'];
 
-//     public function __construct($db) {
-//         $this->panierService = new PanierOfProduct();
-//     }
-
-//     public function addToPanier($panierID, $productID) {
-   
-//         $panierOfProduct = new PanierOfProduct();
-//         $panierOfProduct->ID_Pannier = $panierID;
-//         $panierOfProduct->ID_Product = $productID;
+        $this->panierProductService->create($panierProduct);
+    }
 
   
-//         $result = $this->panierService->create($panierOfProduct);
+    public function get($id) {
+        $panierProduct = $this->panierProductService->fetch($id);
+        echo json_encode($panierProduct);
+    }
 
-      
-//         if ($result) {
-//             echo "Product added to Panier successfully.";
-//         } else {
-//             echo "Failed to add product to Panier.";
-//         }
-//     }
+    public function remove($id) {
+        $this->panierProductService->delete($id);
+    }
+}
 
-//     public function viewPanier($panierID) {
-     
-//         $panierProducts = $this->panierService->read($panierID);
-
-//         echo '<h1>Panier Contents</h1>';
-//         foreach ($panierProducts as $product) {
-//             echo '<div>';
-//             echo '<p>Product ID: ' . $product['ID_Product'] . '</p>';
-          
-//             echo '<button onclick="removeFromPanier(' . $product['ID_Pannier'] . ')">Remove from Panier</button>';
-//             echo '</div>';
-//         }
-
-//         echo '<button onclick="validatePanier()">Valide Panier</button>';
-//     }
-
-//     public function removeFromPanier($panierID, $productID) {
-      
-//         $result = $this->panierService->delete($panierID);
-
-       
-//         if ($result) {
-//             echo "Product removed from Panier successfully.";
-//         } else {
-//             echo "Failed to remove product from Panier.";
-//         }
-//     }
-
-//     public function validatePanier($panierID) {
-    
-//         echo "Panier validated!";
-//     }
-// }
-
-
-// $db = new PDO("your_database_connection_details");
-// $panierController = new PanierController($db);
-// $panierController->addToPanier($panierID, $productID);
-// $panierController->viewPanier($panierID);
-// $panierController->removeFromPanier($panierID, $productID);
-// $panierController->validatePanier($panierID);
 ?>
+
+
