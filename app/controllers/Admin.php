@@ -151,7 +151,7 @@
                     'ID_category' => $_POST['categories'],
                 ];
 
-                $imgStore = $_SERVER['DOCUMENT_ROOT'] . '/E-Commerce/public/images/products';
+                $imgStore = $_SERVER['DOCUMENT_ROOT'] . '/E-Commerce/public/images/products/';
 
                 $imageName = basename($addData['imgProduct']['name']);
                 $placement = $imgStore.$imageName;
@@ -190,6 +190,49 @@
                 'products' => $this->serviceProduct->getAllProduct(),
             ];
             echo json_encode($data);
+        }
+
+        // ============ Delete product =========
+        public function deleteProduct() {
+
+            if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+                $result = $this->serviceProduct->deleteProduct($_POST['productID']);
+                if ($result) {
+                    $data = [
+                        'products' => $this->serviceProduct->getAllProduct(),
+                        'delete' => 'Product Deleted Succefully'
+                    ];
+                    header('Content-Type: application/json');
+                    echo json_encode($data);
+                }else{
+                    echo "Product Not Added";
+                }
+            }
+        }
+        // =========== Update product ==============
+        public function updateProduct() {
+
+            
+
+
+
+
+        }
+        // =========== Update product ==============
+        public function searchProduct() {
+
+             if (isset($_POST['search'])) {
+
+                $products =  $this->serviceProduct->searchProduct($_POST['search']);
+                header('Content-Type: application/json');
+                echo json_encode($products);
+
+           }
+            
+
+
+
+
         }
     }
 
