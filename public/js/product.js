@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 // Import Function
 import {inputEmpty , displayMessage} from "./config.js";
 
@@ -70,16 +70,6 @@ $(document).ready(function() {
 
     // ===================== Update  Categpry ===========================
 
-
-    // ===================== End Update  Categpry ===========================
-
-
-
-
-
-
-
-
     // ===================== Add new Categpry ===========================
 
     $(document).on('submit' , '#formProduct' , function (e) {
@@ -107,13 +97,7 @@ $(document).ready(function() {
             }
         }
 
-
-
     })
-
-
-
-
 
     // ============= Search In table Categories ===============
     $(document).on('keyup' , '#search_category' , function () {
@@ -229,13 +213,6 @@ function validInput(messge) {
     
 
 
-
-
-
-
-
-
-=======
 // ============ JQUERY ======================
     function getProducts(){
         $.ajax({
@@ -262,5 +239,4 @@ function validInput(messge) {
 
 
     }
->>>>>>> 528b83d62ac35c5fe43ee16a454aa6599d13f54c
 

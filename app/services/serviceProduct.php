@@ -1,15 +1,9 @@
 <?php
 
-<<<<<<< HEAD
-        private $db_conn;
-=======
 class serviceProduct implements interfaceProduct
 {
-    private $connect_db;
-    public function __construct()
-    {
-        $this->connect_db = Database::getInstance();
->>>>>>> 528b83d62ac35c5fe43ee16a454aa6599d13f54c
+    private $db_conn;
+
 
         public function __construct()
         {
@@ -53,23 +47,13 @@ class serviceProduct implements interfaceProduct
 
             } catch (PDOException $e) {
                 echo $e->getMessage();
-            }   
+            }
 
         }
 
     }
-    public function getAllProducts()
-    {
-        $sql = "SELECT * FROM product";
-        try {
-            $this->connect_db->query($sql);
-            $products = $this->connect_db->resultSet();
-            return $products;
-        } catch (PDOException $e) {
-            print_r($e->getMessage());
-        }
-    }
-}
+
+
 
 
 ?>

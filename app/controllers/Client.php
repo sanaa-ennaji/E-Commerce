@@ -7,8 +7,6 @@ class Client extends Controller {
         {
             $this->serviceProduct = new serviceProduct();
         }
-
-
     public function shop() {
         $this->view("client/shop");
     }
@@ -18,7 +16,7 @@ class Client extends Controller {
             header("Content-Type: application/json");
             echo json_encode($products);
         } catch (Exception $e) {
-            // handle error gracefully
+          
             header("Content-Type: application/json", true, 500);
             echo json_encode(["error"=> $e->getMessage()]);
         
@@ -28,10 +26,8 @@ class Client extends Controller {
     }
 }
 
-    public function cart(){
+    public function panier(){
         $this->view('client/panier');
     }
-   
 }
-
 ?>

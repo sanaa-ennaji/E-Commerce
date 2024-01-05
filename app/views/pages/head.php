@@ -8,18 +8,16 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
       
-        .sidebar {
-            display: none;
-            position: fixed;
-            right: 0;
-            height: 100%;
-            width: 350px;
-            border-left:  5px solid rgb(1,100, 0) ;
-            background-color: #ffffff;
-            box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
-            z-index: 1000;
-            overflow-y: auto;
-            padding: 1rem;
-        }
+       body{
+        margin: 0;
+       }
+       #btn{
+        position: absolute;
+        right:2rem;
+        bottom: 2rem;
+       }
+       #vid{
+        background-color: gray;
+       }
     </style>
 </head>
