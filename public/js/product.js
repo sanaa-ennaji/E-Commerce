@@ -10,6 +10,7 @@ openBtn.addEventListener('click' , () =>{
 
     if (overlayProduct.classList.contains('hidden')) {
         overlayProduct.classList.remove('hidden');
+        
         $('#upProduct').hide();
         $('#addProduct').show();
 

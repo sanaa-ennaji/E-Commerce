@@ -8,7 +8,7 @@
 
     }
     public function getProducts() {
-        $sql = "SELECT * FROM Product";
+        $sql = "SELECT * FROM product";
         try{
             $this->connect_db->query($sql);
             $products = $this->connect_db->resultSet();
