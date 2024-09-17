@@ -1,4 +1,4 @@
-# Brif11: projet en equipe 3
+## Brif11: projet en equipe 3
 
 ## Introduction
 
