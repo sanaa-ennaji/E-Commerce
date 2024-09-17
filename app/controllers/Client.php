@@ -1,20 +1,25 @@
 <?php 
 
 class Client extends Controller {
-    private $serviceProduct;
+    private $serviceShop;
 
     public function __construct()
         {
-            $this->serviceProduct = new serviceProduct();
+            $this->serviceShop = new serviceShop();
         }
 
-
-    public function shop() {
-        $this->view("client/shop");
+    public function clientinfo(){
+        $data = $this->ServiceClient->getClientInfo($_SESSION['user_id']);
+        $this->view('client/clientinfo', $data);
     }
-    public function getAllProducts() {
+    public function shop() {
+            $this->view("client/shop");
+    }
+
+
+    public function getProducts() {
         try {
-            $products = $this ->serviceProduct->getAllProducts();
+            $products = $this ->serviceShop->getProducts();
             header("Content-Type: application/json");
             echo json_encode($products);
         } catch (Exception $e) {
@@ -31,7 +36,7 @@ class Client extends Controller {
     public function panier(){
         $this->view('client/panier');
     }
-   
+
 }
 
 ?>

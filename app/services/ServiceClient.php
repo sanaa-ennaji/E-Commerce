@@ -3,6 +3,7 @@
 require "InterfaceClient.php";
 class ServiceClient implements InterfaceClient{
     private $db;
+    
 
     public function __construct() {
         // $this->db = new Database();
@@ -72,6 +73,27 @@ class ServiceClient implements InterfaceClient{
             $this->db->query($query);
 
             $data = $this->db->resultSet();
+            return $data;
+        } catch (PDOException $e){
+            die("Error: " . $e->getMessage());
+        }
+    }
+
+    public function getClientInfo($client_UserID){
+        try{
+            // $query = "SELECT User.Name, User.Email, User.Password, Client.Adresse FROM User INNER JOIN Client ON User.ID_User = :ClientID_User";
+            $query = "SELECT * FROM User WHERE ID_User = :Client";
+            $this->db->query($query);
+            $this->db->bind(':Client', $client_UserID);
+            $data1 = $this->db->single();
+            $query = "SELECT * FROM Client WHERE ID_User = :Client";
+            $this->db->query($query);
+            $this->db->bind(':Client', $client_UserID);
+            $data = [
+                'client' => $this->db->single(),
+                'user' => $data1
+            ];
+
             return $data;
         } catch (PDOException $e){
             die("Error: " . $e->getMessage());

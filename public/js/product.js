@@ -10,6 +10,7 @@ openBtn.addEventListener('click' , () =>{
 
     if (overlayProduct.classList.contains('hidden')) {
         overlayProduct.classList.remove('hidden');
+        
         $('#upProduct').hide();
         $('#addProduct').show();
 
@@ -17,9 +18,12 @@ openBtn.addEventListener('click' , () =>{
             type: "GET",
             url: "http://localhost/E-commerce/admin/getAllCategories",
             success: function (categories) {
+                $('#categories').empty();
+
+                $('#categories').append(`<option selected  value="">Choose a Category</option>`)
                 $.each(categories['categories'] , function (i , v) {
                     $('#categories').append(`<option value="${v.ID_Category}">${v.Name}</option>`)
-
+                    
                 })
             }
         });
@@ -69,7 +73,47 @@ $(document).ready(function() {
     })
 
     // ===================== Update  Categpry ===========================
+    var id_update;
 
+    $(document).on('click' , '.upBtn' , function() {
+        if ($(overlayProduct).hasClass('hidden')) {
+            $(overlayProduct).removeClass('hidden');
+            $('#upProduct').show();
+            $('#addProduct').hide();
+        }
+
+        id_update = $(this).closest('tr').find('.productID').text();
+        var productName = $(this).closest('tr').find('.productName').text();
+        var productDesc = $(this).closest('tr').find('.productDesc').text();
+        var productQte = $(this).closest('tr').find('.productQte').text();
+        var productPrice = $(this).closest('tr').find('.productPrice').text();
+        var categoryOfproduct = $(this).closest('tr').find('.categoryProduct').text();
+        
+        $('#productName').val(productName);
+        $('#descProduct').val(productDesc);
+        $('#qunatityProduct').val(productQte);
+        $('#priceProduct').val(productPrice);
+
+        $.ajax({
+            type: "GET",
+            url: "http://localhost/E-commerce/admin/getAllCategories",
+            success: function (categories) {
+                $('#categories').empty();
+                $.each(categories['categories'] , function (i , v) {
+                    if (v.Name === categoryOfproduct) {
+                        $('#categories').append(`<option selected value="${v.ID_Category}">${v.Name}</option>`)
+                    }else {
+                        $('#categories').append(`<option value="${v.ID_Category}">${v.Name}</option>`);
+                    }
+                })
+            }
+        });
+
+        // Add Id To From Product =======================
+        $(`<input type="hidden" name="id_product" value="${id_update}" id="id_product">`).appendTo('#formProduct');
+
+
+    })
 
     // ===================== End Update  Categpry ===========================
 
@@ -109,7 +153,27 @@ $(document).ready(function() {
     
             }
         }if ($(document.activeElement).attr('id') == 'upProduct') {
-            alert('hello')
+            if (validInput($('#fieldErr'))) {
+              
+                $.ajax({
+                    type: "POST",
+                    url: "http://localhost/E-commerce/admin/updateProduct",
+                    data: formData,
+                    processData: false,  
+                    contentType: false,
+                    cache: false,
+                    success: function (data) {
+                        $('#id_product').remove();
+                        $(overlayProduct).addClass('hidden')
+                        inputEmpty(('#productName') , $('#descProduct') , $('#qunatityProduct') ,  $('#priceProduct') , $('#categories'))
+                        getAllProduct(data['products'])
+                    }
+                });
+    
+    
+            }
+
+
         }
 
 
@@ -150,11 +214,11 @@ function getAllProduct(data) {
         $("#tableProduct").append(`
             <tr class="h-[80px]">
                 <th scope="col" class="px-6 py-2 border border-green-300 productID">${value.ID_Product}</th>
-                <th scope="col" class="px-6 py-2 border border-green-300 categoryID">${value.Product_Name}</th>
-                <th scope="col" class="px-6 py-2 border border-green-300 categoryID">${value.Product_Desc}</th>
-                <th scope="col" class="px-6 py-2 border border-green-300 categoryID">${value.Quantity}</th>
-                <th scope="col" class="px-6 py-2 border border-green-300 categoryID">${value.Price}</th>
-                <th scope="col" class="px-6 py-2 border border-green-300 nameCategory">${value.Name}</th>
+                <th scope="col" class="px-6 py-2 border border-green-300 productName">${value.Product_Name}</th>
+                <th scope="col" class="px-6 py-2 border border-green-300 productDesc">${value.Product_Desc}</th>
+                <th scope="col" class="px-6 py-2 border border-green-300 productQte">${value.Quantity}</th>
+                <th scope="col" class="px-6 py-2 border border-green-300 productPrice">${value.Price}</th>
+                <th scope="col" class="px-6 py-2 border border-green-300 categoryProduct">${value.Name}</th>
                 <th scope="col" class="px-6 py-2 border border-green-300 text-center">
                     <!-- ============ Delete Button =============  -->
                     <a href="#" class="font-medium text-rose-500 inline-block  hover:underline delbtn">

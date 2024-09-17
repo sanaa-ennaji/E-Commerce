@@ -212,8 +212,52 @@
         // =========== Update product ==============
         public function updateProduct() {
 
-            
+             
+            if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+                $update = [
+                    'idProduct' => $_POST['id_product'],
+                    'productName' => $_POST['productName'],
+                    'descProduct' => $_POST['descProduct'],
+                    'quantity' => $_POST['quantity'],
+                    'price' => $_POST['price'],
+                    'imgProduct' => $_FILES['img_product'],
+                    'ID_category' => $_POST['categories'],
+                ];
 
+                $imgStore = $_SERVER['DOCUMENT_ROOT'] . '/E-Commerce/public/images/products/';
+
+                $imageName = basename($update['imgProduct']['name']);
+                $placement = $imgStore.$imageName;
+                
+                if (move_uploaded_file($update['imgProduct']['tmp_name'] , $placement)) {
+
+                    $updateProduct = new Product();
+
+                    $updateProduct->ID_Product = $update['idProduct'];
+                    $updateProduct->Name = $update['productName'];
+                    $updateProduct->Description = $update['descProduct'];
+                    $updateProduct->Quantity = $update['quantity'];
+                    $updateProduct->Price = $update['price'];
+                    $updateProduct->IMG_Product = $imageName;
+                    $updateProduct->ID_Category = $update['ID_category'];
+
+                    $result = $this->serviceProduct->updateProduct($updateProduct);
+                    if ($result) {
+                        $data = [
+                            'products' => $this->serviceProduct->getAllProduct(),
+                            'succes' => 'Product Updated Succefully'
+                        ];
+                        header('Content-Type: application/json');
+                        echo json_encode($data);
+                    }else{
+                        echo "Product Not Added";
+                    }
+
+                }
+
+
+
+            }
 
 
 
